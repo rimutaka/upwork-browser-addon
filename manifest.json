@@ -3,7 +3,7 @@
   "name": "Upwork Search Enhancer",
   "description": "Makes searching for jobs on UpWork easier and faster.",
   "homepage_url": "https://github.com/rimutaka/upwork-browser-addon",
-  "version": "0.1",
+  "version": "0.1.2",
   "icons": {
     "48": "icons/icon.png",
     "96": "icons/icon@2x.png"

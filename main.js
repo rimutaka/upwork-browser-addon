@@ -1,14 +1,21 @@
 // constants
+
+// the maximum number of job IDs to be tracked in the local storage
 const jobIdCountLimit = 1000;
+// a custom class for "viewed" jobs
 const css = ".mvx-viewed {background-color: #f2f2f2;}";
+// a custom attr with the job ID added to jobs
 const jobIdAttrName = "data-mvx-jobid";
+// a container with the list of jobs
 const jobsContainerSelector = "div[data-v2-job-list]";
+// params of what is considered to be a visible (viewed) job
 const visOptions = { root: null, rootMargin: "0px", threshold: 1.0 };
+
 const mutationObserverOptions = { childList: true, subtree: true };
 
 // add custom CSS to the page
 var style = document.createElement('style');
-style.innerHTML = css;
+style.appendChild(document.createTextNode(css));
 document.head.appendChild(style);
 
 // restore the list of viewed job IDs
@@ -16,7 +23,7 @@ let viewedIDs = [];
 let storedViewedIDs = window.localStorage.getItem("viewedIDs", viewedIDs);
 if (storedViewedIDs) viewedIDs = JSON.parse(storedViewedIDs);
 
-/** Trim and store the list of latest jobs on demand */
+/** Trims and saves the list of the latest jobs in local storage */
 function storeViewedIDs() {
   while (viewedIDs.length > jobIdCountLimit) { viewedIDs.shift(); }
   window.localStorage.setItem("viewedIDs", JSON.stringify(viewedIDs));
@@ -25,7 +32,10 @@ function storeViewedIDs() {
 /** Check for addition of new jobs to the page and start monitoring their visibility. */
 function trackJobVisibility() {
   if (!jobsContainer) jobsContainer = document.querySelector(jobsContainerSelector);
-  if (!jobsContainer) return;
+  if (!jobsContainer) {
+    console.log("Could not find element with " + jobsContainerSelector)
+    return
+  };
   jobsContainer.querySelectorAll("a.job-title-link:not(.mvx-tracked)").forEach(element => {
 
     element.classList.add("mvx-tracked"); // mark the element as processed
@@ -100,6 +110,7 @@ let jobsContainer = document.querySelector(jobsContainerSelector);
 if (!jobsContainer) {
   // watch the entire document until there is a job container
   bodyObserver.observe(document.body, mutationObserverOptions);
+  console.log("Jobs container not found. Observing BODY for content changes.")
 }
 else {
   // this call is preferred because of it's narrower scope
