@@ -13,7 +13,7 @@ const visOptions = { root: null, rootMargin: "0px", threshold: 1.0 };
 
 const mutationObserverOptions = { childList: true, subtree: true };
 
-// console.log("main started");
+// console.debug("main started");
 
 // add custom CSS to the page to grey-out viewed posts
 var style = document.createElement('style');
@@ -37,10 +37,10 @@ function storeViewedIDs() {
 function trackJobVisibility() {
   // get the list of job posts containers using their signature selector
   // the UI is constantly changing and so is the selector
-  // console.log("trackJobVisibility called");
+  // console.debug("trackJobVisibility called");
   if (!jobsContainer) jobsContainer = document.querySelector(jobsContainerSelector);
   if (!jobsContainer) {
-    console.log("Could not find element with " + jobsContainerSelector)
+    console.warn("Could not find element with " + jobsContainerSelector)
     return
   };
   // Example HTML
@@ -55,7 +55,7 @@ function trackJobVisibility() {
 */}
 
   jobsContainer.querySelectorAll("h3.job-tile-title > a:not(.mvx-tracked)").forEach(element => {
-    console.log("Found a:not(.mvx-tracked)");
+    // console.debug("Found a:not(.mvx-tracked)");
 
     element.classList.add("mvx-tracked"); // mark the element as processed
 
@@ -63,7 +63,7 @@ function trackJobVisibility() {
     const href = element.getAttribute("href").split("~");
     if (href.length < 2) return; // the URL has no id - no point watching it
     const jobId = href[href.length - 1].split("/")[0];
-    // console.log(`JobID: ${jobId}`);
+    // console.debug(`JobID: ${jobId}`);
 
     // viewed job - find parent SECTION element
     let aParent = element.parentElement;
@@ -123,18 +123,18 @@ const jobContainerObserver = new MutationObserver((mutations) => {
 });
 
 // Code execution starts here ============================================
-// console.log("code started");
+// console.debug("code started");
 
 // Try to get the jobs container.
 // It is usually empty on the first run - we'll try again later in the code
 let jobsContainer = document.querySelector(jobsContainerSelector);
-// console.log(`Jobs container: ${jobsContainer}`);
+// console.debug(`Jobs container: ${jobsContainer}`);
 
 // start processing the page here
 if (!jobsContainer) {
   // watch the entire document until there is a job container
   bodyObserver.observe(document.body, mutationObserverOptions);
-  console.log("Jobs container not found. Observing BODY for content changes.")
+  // console.debug("Jobs container not found. Observing BODY for content changes.")
 }
 else {
   // this call is preferred because of it's narrower scope

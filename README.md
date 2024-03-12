@@ -1,11 +1,13 @@
 # Quicker UpWork Search
 
-This extension greys out _upwork.com_ job posts you looked at earlier to help you scroll through the list of UpWork jobs faster:
+This extension greys out job posts you saw earlier as you scroll through your feed or search results on [upwork.com].
+
+You do not need to open the job post or click on anything - the extension considers the job _viewed_ as soon as it comes into view.
+
+For example, the same job may appear in multiple categories or searches. You can confidently skip it if the job is greyed out because you already looked at it before. This visual clue saves time scrolling through the search results and makes it less stressful.
 
 - **new jobs** - keep their original white background
 - **viewed jobs** - greyed-out
- 
-This feature works only on search pages starting with https://www.upwork.com/nx/find-work/. Only 1000 recent jobs are remembered.
 
 ![UpWork screen with viewed jobs](imgs/screen-with-viewed-jobs.png)
 
@@ -15,7 +17,9 @@ Every job URL has a unique ID appended at the end. E.g. `0101cefcf75c733d23` in 
 
 ![UpWork screen with viewed jobs](imgs/tech-details.png)
 
-It is not necessary to open the job or click on anything to mark the job as viewed - the job is counted as "viewed" when it is scrolled into view.
+- no user action is required to mark the job as viewed
+- the job is counted as viewed when it is scrolled into view
+- the extension activates on search pages starting with https://www.upwork.com/nx/find-work/
 
 Only 1,000 recent job IDs are saved to keep the list of IDs small.
 

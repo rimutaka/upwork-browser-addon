@@ -4,7 +4,7 @@
   "short_name": "Uppy",
   "description": "Highlights viewed UpWork jobs for a quicker scroll through search results",
   "homepage_url": "https://github.com/rimutaka/upwork-browser-addon",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "@rimutaka",
   "icons": {
     "19": "icons/icon_19.png",
@@ -26,7 +26,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "{e0906326-acbc-4907-9e0e-e41b490b0c05}",
+      "id": "{e0906326-acbc-4907-9e0e-e41b490b0c06}",
       "strict_min_version": "112.0"
     }
   }
