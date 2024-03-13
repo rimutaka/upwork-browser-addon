@@ -1,6 +1,6 @@
 # Quicker UpWork Search
 
-This extension greys out job posts you saw earlier as you scroll through your feed or search results on [upwork.com].
+This extension greys out job posts you saw earlier as you scroll through your feed or search results on [upwork.com](https://upwork.com).
 
 You do not need to open the job post or click on anything - the extension considers the job _viewed_ as soon as it comes into view.
 
@@ -10,6 +10,19 @@ For example, the same job may appear in multiple categories or searches. You can
 - **viewed jobs** - greyed-out
 
 ![UpWork screen with viewed jobs](imgs/screen-with-viewed-jobs.png)
+
+## Installation
+
+- Chrome: https://chromewebstore.google.com/detail/quicker-upwork-search/kedmffhiekhknnfajpgjhbnalgeemhci
+- Firefox: https://addons.mozilla.org/addon/quicker-upwork-search/
+
+**Firefox users have to grant permissions to the extension after installation:**
+- log into https://www.upwork.com/nx/find-work/
+- click on the extensions icon in the toolbar
+- click on the settings cog for this extension
+- click on _Always allow on www.upwork.com_
+
+![Firefox permissions](imgs/ff-permissions-tab.png)
 
 ## Technical details
 
