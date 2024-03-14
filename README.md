@@ -4,7 +4,7 @@ This extension greys out job posts you saw earlier as you scroll through your fe
 
 You do not need to open the job post or click on anything - the extension considers the job _viewed_ as soon as it comes into view.
 
-For example, the same job may appear in multiple categories or searches. You can confidently skip it if the job is greyed out because you already looked at it before. This visual clue saves time scrolling through the search results and makes it less stressful.
+For example, the same job may appear in multiple categories or searches. You can confidently skip it if the job is greyed out because you already looked at it before.
 
 - **new jobs** - keep their original white background
 - **viewed jobs** - greyed-out
