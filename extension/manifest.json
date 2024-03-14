@@ -4,10 +4,8 @@
   "short_name": "Uppy",
   "description": "Highlights viewed UpWork jobs for a quicker scroll through search results",
   "homepage_url": "https://github.com/rimutaka/upwork-browser-addon",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "@rimutaka",
-  "minimum_chrome_version": "110",
-  "offline_enabled": false,
   "icons": {
     "19": "icons/icon_19.png",
     "16": "icons/icon_16.png",
@@ -19,11 +17,18 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.upwork.com/nx/find-work/*"
+        "https://www.upwork.com/nx/find-work/*",
+        "https://www.upwork.com/nx/search/jobs/*"
       ],
       "js": [
         "./main.js"
       ]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{e0906326-acbc-4907-9e0e-e41b490b0c06}",
+      "strict_min_version": "112.0"
+    }
+  }
 }

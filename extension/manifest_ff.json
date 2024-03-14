@@ -4,7 +4,7 @@
   "short_name": "Uppy",
   "description": "Highlights viewed UpWork jobs for a quicker scroll through search results",
   "homepage_url": "https://github.com/rimutaka/upwork-browser-addon",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "@rimutaka",
   "icons": {
     "19": "icons/icon_19.png",
@@ -17,7 +17,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.upwork.com/nx/find-work/*"
+        "https://www.upwork.com/nx/find-work/*",
+        "https://www.upwork.com/nx/search/jobs/*"
       ],
       "js": [
         "./main.js"

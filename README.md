@@ -32,7 +32,7 @@ Every job URL has a unique ID appended at the end. E.g. `0101cefcf75c733d23` in 
 
 - no user action is required to mark the job as viewed
 - the job is counted as viewed when it is scrolled into view
-- the extension activates on search pages starting with https://www.upwork.com/nx/find-work/
+- the extension activates on search pages starting with https://www.upwork.com/nx/find-work/ and https://www.upwork.com/nx/search/jobs/
 
 Only 1,000 recent job IDs are saved to keep the list of IDs small.
 
