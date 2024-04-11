@@ -3,7 +3,7 @@
 // the maximum number of job IDs to be tracked in the local storage
 const jobIdCountLimit = 1000;
 // a custom class for "viewed" jobs
-const css = ".mvx-viewed {background-color: #f2f2f2;}";
+const css = ".mvx-viewed {background-color: #f2f2f2 !important;}";
 // a custom attr with the job ID added to jobs
 const jobIdAttrName = "data-mvx-jobid";
 // a container with the list of jobs, different on different pages
@@ -116,6 +116,7 @@ const jobViewedCallback = (entries, observer) => {
       // add the job ID to the list of viewed jobs
       const jobId = entry.target.getAttribute(jobIdAttrName);
       if (!viewedIDs.includes(jobId)) {
+        // console.debug(`Storing job ${jobId}`);
         viewedIDs.push(jobId);
         // save in local storage when not too busy
         window.requestIdleCallback(storeViewedIDs, { timeout: 3000 });
